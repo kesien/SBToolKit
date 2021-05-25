@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwitchServiceLibrary", "SwitchServiceLibrary\SwitchServiceLibrary.csproj", "{2CFDC489-52C8-4452-A975-1DB49CA3EFC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SBToolKit.SwitchServiceLibrary", "SwitchServiceLibrary\SBToolKit.SwitchServiceLibrary.csproj", "{2CFDC489-52C8-4452-A975-1DB49CA3EFC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{917CD49C-BC25-4791-8359-9DF4E07A2EF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SBToolKit.WPF", "SBToolKitDesktop\SBToolKit.WPF.csproj", "{C9959716-2D56-41B9-80BA-050C145EAEC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{2CFDC489-52C8-4452-A975-1DB49CA3EFC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CFDC489-52C8-4452-A975-1DB49CA3EFC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CFDC489-52C8-4452-A975-1DB49CA3EFC5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{917CD49C-BC25-4791-8359-9DF4E07A2EF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{917CD49C-BC25-4791-8359-9DF4E07A2EF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{917CD49C-BC25-4791-8359-9DF4E07A2EF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{917CD49C-BC25-4791-8359-9DF4E07A2EF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9959716-2D56-41B9-80BA-050C145EAEC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9959716-2D56-41B9-80BA-050C145EAEC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9959716-2D56-41B9-80BA-050C145EAEC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9959716-2D56-41B9-80BA-050C145EAEC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

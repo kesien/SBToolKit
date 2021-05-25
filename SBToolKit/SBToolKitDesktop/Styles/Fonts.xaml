@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <FontFamily x:Key="OpenSansRegular">pack://application:,,,/Resources/Fonts/#Open Sans</FontFamily>
+    <FontFamily x:Key="OpenSansLight">pack://application:,,,/Resources/Fonts/#Open Sans Light</FontFamily>
+    <FontFamily x:Key="OpenSansBold">pack://application:,,,/Resources/Fonts/#Open Sans Bold</FontFamily>
+    <FontFamily x:Key="ChelaOne">pack://application:,,,/Resources/Fonts/#Chela One</FontFamily>
+
+    <Style TargetType="{x:Type Control}" x:Key="BaseStyle">
+        <Setter Property="FontFamily" Value="{StaticResource OpenSansRegular}"/>
+    </Style>
+    <Style TargetType="{x:Type TextBlock}" x:Key="BaseTextBlockStyle">
+        <Setter Property="FontFamily" Value="{StaticResource OpenSansRegular}"/>
+    </Style>
+
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}"/>
+    <Style TargetType="{x:Type Label}" BasedOn="{StaticResource BaseStyle}"/>
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseStyle}"/>
+    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlockStyle}"/>
+    <Style TargetType="{x:Type ListView}" BasedOn="{StaticResource BaseStyle}"/>
+    
+</ResourceDictionary>

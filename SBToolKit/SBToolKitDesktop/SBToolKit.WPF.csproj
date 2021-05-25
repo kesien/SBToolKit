@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Fonts\OpenSans-Bold.ttf" />
+    <None Remove="Resources\Fonts\OpenSans-Light.ttf" />
+    <None Remove="Resources\Fonts\OpenSans-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
+    <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SwitchServiceLibrary\SBToolKit.SwitchServiceLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Fonts\OpenSans-Bold.ttf" />
+    <Resource Include="Resources\Fonts\OpenSans-Light.ttf" />
+    <Resource Include="Resources\Fonts\OpenSans-Regular.ttf" />
+  </ItemGroup>
+
+</Project>

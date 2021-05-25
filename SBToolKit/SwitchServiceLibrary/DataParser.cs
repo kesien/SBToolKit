@@ -9,11 +9,17 @@ namespace SwitchServiceLibrary
 {
     public static class DataParser
     {
+        #region Private Methods
+        /// <summary>
+        /// Convert the XML data to DataSet
+        /// </summary>
+        /// <param name="dataStream"></param>
+        /// <returns></returns>
         private static DataSet XMLToDataSet(Stream dataStream)
         {
-            DataSet ds = new DataSet();
+            DataSet ds = new();
 
-            XmlDocument xml = new XmlDocument();
+            XmlDocument xml = new();
             xml.Load(dataStream);
             XmlNamespaceManager nsmgr = new XmlNamespaceManager(xml.NameTable);
             nsmgr.AddNamespace("ss", "urn:schemas-microsoft-com:office:spreadsheet");
@@ -21,7 +27,7 @@ namespace SwitchServiceLibrary
 
             foreach (XmlNode node in root.SelectNodes("//ss:Worksheet", nsmgr))
             {
-                DataTable dt = new DataTable(node.Attributes["ss:Name"].Value);
+                DataTable dt = new(node.Attributes["ss:Name"].Value);
                 ds.Tables.Add(dt);
                 XmlNodeList rows = node.SelectNodes("ss:Table/ss:Row", nsmgr);
                 if (rows.Count > 0)
@@ -48,29 +54,36 @@ namespace SwitchServiceLibrary
 
             return ds;
         }
+        #endregion
 
-        public static List<CourseModel> GetData(Stream dataStream)
+        #region Public Methods
+        /// <summary>
+        /// Parse the downloaded data.
+        /// </summary>
+        /// <param name="dataStream"></param>
+        /// <returns></returns>
+        public static List<Course> ParseData(Stream dataStream)
         {
             var dataSet = XMLToDataSet(dataStream).Tables[0].AsEnumerable();
 
-            List<ParticipantModel> participants = dataSet.Select(datarow => new ParticipantModel
+            List<Participant> participants = dataSet.Select(datarow => new Participant
             {
                 ID = datarow.Field<string>("person_ID"),
                 Firstname = datarow.Field<string>("Vorname"),
                 Lastname = datarow.Field<string>("Nachname"),
-                Email = datarow.Field<string>("EMail"),
+                Email = datarow.Field<string>("EMail").ToLower(),
                 Coursenumber = datarow.Field<string>("Kursnummer")
             }).ToList();
 
             HashSet<string> courseNumbers = new();
-            List<CourseModel> courses = new();
+            List<Course> courses = new();
 
             foreach (var datarow in dataSet)
             {
                 string cn = datarow.Field<string>("Kursnummer");
                 if (!courseNumbers.Contains(cn))
                 {
-                    courses.Add(new CourseModel()
+                    courses.Add(new Course()
                     {
                         Coursenumber = cn,
                         Language = datarow.Field<string>("Sprache"),
@@ -84,5 +97,6 @@ namespace SwitchServiceLibrary
 
             return courses;
         }
+        #endregion
     }
 }
